@@ -1,6 +1,6 @@
 # CNVbenchmarkeR #
 
-CNVbenchmarkeR is a framework to benchmark algorithms when detecting copy number variations (CNVs) against different datasets. Current version supports DECoN, CoNVaDING, panelcn.MOPS, ExomeDepth and CODEX2 tools.
+CNVbenchmarkeR is a framework to benchmark algorithms when detecting germline copy number variations (CNVs) against different NGS datasets. Current version supports DECoN, CoNVaDING, panelcn.MOPS, ExomeDepth and CODEX2 tools.
 
 
 ### Prerequisites ###
