@@ -1,0 +1,39 @@
+cov_thresh_down:
+  default:  60
+  min: 10
+  max: 300
+cov_thresh_up:
+  default: 4000
+  min: 1000
+  max: 8000
+length_thresh_down: 
+  default: 20
+  min: 10
+  max: 100
+length_thresh_up: 
+  default: 2000
+  min: 500
+  max: 5000
+mapp_thresh: 
+  default: 0.9
+  options: [0.8, 0.85, 0.9, 0.95, 1]
+gc_thresh_down: 
+  default: 20
+  min: 5
+  max: 40
+gc_thresh_up: 
+  default: 80
+  min: 60
+  max: 95
+sample_reads_median_limit: 
+  default: 50
+  min: 20
+  max: 100
+cn_del_factor: 
+  default: 1.7
+  min: 1
+  max: 2
+cn_dup_factor: 
+  default: 2.3
+  min: 2
+  max: 3

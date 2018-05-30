@@ -1,0 +1,14 @@
+defineControlsByIndication: false   # true for removing samples with the same clinical indication from controls to the one being tested
+
+CN0: 0.025
+CN1: 0.57
+CN3: 1.46
+CN4: 2
+sizeFactor: quant
+norm: 1
+normType: quant
+qu: 0.25
+quSizeFactor: 0.75
+priorImpact: 1
+minMedianRC: 30
+maxControls: 25

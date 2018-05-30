@@ -1,0 +1,28 @@
+regionThreshold:
+  default: 20
+  min: 0
+  max: 100
+ratioCutOffLow:
+  default: 0.65
+  min: 0
+  max: 2
+ratioCutOffHigh:
+  default: 1.4
+  min: 0
+  max: 2
+zScoreCutOffLow:
+  default: -3
+  min: -10
+  max: 0
+zScoreCutOffHigh:
+  default: 3
+  min: 0
+  max: 10
+sampleRatioScore:
+  default: 0.09
+  min: 0
+  max: 1
+percentageLessReliableTargets:
+  default: 20
+  min: 0
+  max: 100

@@ -1,0 +1,11 @@
+# define which datasets will be evaluated in the benchmark 
+
+# This is an example of dataset definition:
+dataset1:
+  include: true   # true to include this dataset in the analysis, false otherwise
+  bams_dir: "/yourPath/bams/"   # folder where bams files (.bai indexes) are stored
+  bed_file: "/yourPath/bed5.bed"   # bed file defining ROIs. It must be sortered by chr and start position, and 4th column must contain only gene symbol. (See examples folder)
+  fasta_file: "/yourPath/GRCh37_Ensembl_67.fa"   # genome fasta file
+  validated_results_file: "/yourPath/MLPAresults.txt"    # file containing results obtained using a orthogonal method (MLPA or aCGH) (See examples folder)
+  validated_results_file_format: "icr"   # format of validated results file: icr or panelcn
+  read_length: 101   # read length used when sequencing

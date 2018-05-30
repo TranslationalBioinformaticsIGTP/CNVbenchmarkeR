@@ -1,0 +1,36 @@
+SampleID	ICR96Pool	Gene	MLPAResult	ResultType	ExonCNVType	ExonCNVSize	Chromosome	5PrimeExon37	3PrimeExon37
+47	1	APC	Normal	Normal			5	112073585	112179823
+47	1	ATM	Normal	Normal			11	108093559	108236235
+47	1	BAP1	Normal	Normal			3	52436304	52443894
+47	1	BARD1	Normal	Normal			2	215593400	215674293
+47	1	BMPR1A	Normal	Normal			10	88516396	88683476
+47	1	BRCA1	Normal	Normal			17	41197695	41277387
+47	1	BRCA2	Normal	Normal			13	32889611	32972907
+47	1	BRIP1	Normal	Normal			17	59760657	59940755
+95	1	APC	Normal	Normal			5	112073585	112179823
+95	1	ATM	Normal	Normal			11	108093559	108236235
+95	1	BAP1	Normal	Normal			3	52436304	52443894
+95	1	BARD1	Normal	Normal			2	215593400	215674293
+95	1	BMPR1A	Normal	Normal			10	88516396	88683476
+95	1	BRCA1	Normal	Normal			17	41197695	41277387
+95	1	BRCA2	Normal	Normal			13	32889611	32972907
+95	1	MLH1	Normal	Normal			3	37035039	37092144
+95	1	MSH2	Normal	Normal			2	47630331	47710088
+9848	1	MSH6	Normal	Normal			2	48010373	48033999
+9848	1	MUTYH	Normal	Normal			1	45794978	45805926
+9848	1	NBN	Normal	Normal			8	90947810	90996789
+9848	1	PALB2	Normal	Normal			16	23614780	23652478
+9848	1	PMS2	Normal	Normal			7	6026390	6048650
+9848	1	PTEN	Normal	Normal			10	89624227	89725229
+9848	1	RAD51C	Normal	Normal			17	56770005	56811583
+9848	1	RAD51D	Normal	Normal			17	33427972	33446632
+4548	1	NSD1	Exon 9-13 deletion	ExonCNV	Deletion	Multi	6	176671196	176684152
+4548	1	MSH2	Exon 8 duplication	ExonCNV	Duplication	Single	1	47672687	47672796
+									
+									
+									
+									
+Explanations:									
+SampleID: sample name.  IMPORTANT: SampeID must match sample file name; Example: Sample 47 expect 47.bam and 47.bam.bai files at bams folder									
+ICR96Pool: ignore									
+Gene: gene validate via MLPA									

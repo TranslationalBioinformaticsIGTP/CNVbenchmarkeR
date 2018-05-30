@@ -1,0 +1,11 @@
+convadingFolder: /yourPath/CoNVaDING-1.2.1
+defineControlsByIndication: false   # true for removing samples with the same clinical indication from controls to the one being tested (very high time consuming)
+
+regionThreshold: 20
+ratioCutOffLow: 0.65
+ratioCutOffHigh: 1.4
+zScoreCutOffLow: -3
+zScoreCutOffHigh: 3
+sampleRatioScore: 0.09
+percentageLessReliableTargets: 20
+

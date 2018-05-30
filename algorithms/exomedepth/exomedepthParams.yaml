@@ -1,0 +1,4 @@
+phi.bins: 1 
+transition.probability: 0.0001  
+expected.CNV.length: 50000
+
