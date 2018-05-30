@@ -31,14 +31,14 @@ SampleID	Indication	Truth	Exons	MLPAResult		Explanations
 70800	APC	APC	E10-E16	CN1		
 63349	NF1	NF1	E1-E57	CN1		
 84886	CDKN2A	CDKN2A	E1-E3	CN1		
-7121						
+						
 36847	REP1	MSH2	E10	CN3		
 61524	MSH6PMS2	PMS2	E10-E15	CN1		
 4427	REP2	MLH1	E2	CN1		
 5904	REP1	MLH1	E4	CN1		
 1002	REP1	MSH2	E1-E7	CN1		
 52461	APC	APC	E1-E16	CN1		
-34929						
+						
 24207	BRCA12	BRCA1	E1-E2	CN3		
 45948	APC	APC	E1-E16	CN1		
 72211	APC	APC	E1-E16	CN1		
@@ -53,25 +53,25 @@ SampleID	Indication	Truth	Exons	MLPAResult		Explanations
 42544	PMS2	PMS2	E14	CN1		
 75455	MSH6	MSH6	E1	CN1		
 58251	CDH1	CDH1	E1-E2	CN1		
-10434						
+						
 39713	CDKN2A	CDKN2A	E1-E2	CN1		
 72914	CDKN2A	CDKN2A	E1-E2	CN1		
 62985	NF1SPRED1	NF1	E1-E57	CN1		
-71037						
+						
 15164	NF2SMARCB1	NF2	E1-E16	CN1		
 19917		SMARCB1	E1-E9	CN1		
 78731	NF2SMARCB1	SMARCB1	E5-E6	CN1		
-22990						
-90535						
+						
+						
 82720	NF1	NF1	E1-E57	CN1		
-40195						
+						
 89184	NF1	NF1	E16-E35	CN1		
 5667	NF1	NF1	E16-E35	CN1		
 96556	NF2	NF2	E15-E16	CN1		
 82614	NF2	NF2	E1-E5	CN1		
 45451	NF2	NF2	E1-E15	CN1		
-4736						
-2497						
+						
+						
 52187						
 12203	TP53					
 52934	BRCA12					
@@ -142,3 +142,75 @@ SampleID	Indication	Truth	Exons	MLPAResult		Explanations
 841	NF2SMARCB1					
 85943	NF1					
 88205	NF1					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+	Genes					
+REP1	MLH1, MSH2, EPCAM					
+REP2	MLH1, MSH2					
+NF1	NF1					
+NF2	NF2					
+NF1SPRED1	NF1, SPRED1					
+BRCA2CHEK2	BRCA2, CHEK2					
+BRCA	BRCA1, BRCA2, CHEK2					
+BRCA1	BRCA1					
+APC	APC					
+CDKN2A	CDKN2A					
+TP53	TP53					
+BRCA12	BRCA1, BRCA2					
+PMS2	PMS2					
+MSH6	MSH6					
+REP3	MLH1, MSH2, EPCAM, MSH6, PMS2					
+MSH6PMS2	MSH6, PMS2					
+MUTYH	MUTYH					
+CDH1	CDH1					
+TSC	TSC1, TSC2					
+APCMUTYH	APC, MUTYH					
+NF2SMARCB1	NF2, SMARCB1					
+SMARCB1	SMARCB1					
+RENAL	FLCN, VHL					
+FLCN	FLCN					

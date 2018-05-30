@@ -1,7 +1,7 @@
 # define which algorithms will be run in the benchmark. Set 'true to be included', 'false' to omit
 algorithms:
-  decon: true  
+  decon: false  
   panelcn: true
-  convading: true
-  exomedepth: true
-  codex2: true
+  convading: false
+  exomedepth: false
+  codex2: false
