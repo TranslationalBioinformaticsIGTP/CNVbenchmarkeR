@@ -458,9 +458,7 @@ optimize = function(params_vals, stats, datasetName, datasetContent, optimizerPa
         allFinished <- FALSE
         paramIdx <- startPoint$paramIdx
         paramsVals <- startPoint$paramsValues
-        param <- paramsVals[[paramIdx]]
-        print(paste("Processing param", param$paramName))
-        
+        param <- paramsVals[[paramIdx]]        
         paramFinished <- TRUE
         
         # try all values for this param
