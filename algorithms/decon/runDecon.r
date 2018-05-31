@@ -1,5 +1,5 @@
 # Runs DECON over the datasets cofigured at [datasets_params_file]
-#USAGE: Rscript-bioc-3.6 runDecon.R [decon_params_file] [datasets_params_file]
+#USAGE: Rscript runDecon.R [decon_params_file] [datasets_params_file]
 print(paste("Starting at", startTime <- Sys.time()))
 suppressPackageStartupMessages(library(yaml))
 source(if (basename(getwd()) == "optimizers") "../utils/utils.r" else "utils/utils.r") # Load utils functions
