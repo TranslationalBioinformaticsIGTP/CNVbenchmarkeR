@@ -100,7 +100,7 @@ for (name in names(datasets)) {
 
         # Do pre-calc part of the algorithm
         if (is.null(deconParams$execution) || deconParams$execution != "skipPrecalcPhase") {
-          cmd <- paste("Rscript-3.4-bioc-3.5", "ReadInBams.R", "--bams", bamsDir, "--bed", bedFile, "--fasta", fastaFile, "--out", ouputBams)
+          cmd <- paste("Rscript", "ReadInBams.R", "--bams", bamsDir, "--bed", bedFile, "--fasta", fastaFile, "--out", ouputBams)
           print(cmd); system(cmd)
           print("ReadInBams.R finished");
           
@@ -118,14 +118,14 @@ for (name in names(datasets)) {
         
 
         # Call part 2
-        cmd <- paste("Rscript-3.4-bioc-3.5", "IdentifyFailures.R", "--Rdata", ouputRData, "--mincorr", deconParams$mincorr,
+        cmd <- paste("Rscript", "IdentifyFailures.R", "--Rdata", ouputRData, "--mincorr", deconParams$mincorr,
                      "--mincov", deconParams$mincov,  "--out", failuresFile)
         print(cmd); system(cmd)
         print("IdentifyFailures.R finished");
 
         
         # Call part 3
-        cmd <- paste("Rscript-3.4-bioc-3.5 makeCNVcalls.R", "--Rdata", ouputRData, "--transProb",  deconParams$transProb,
+        cmd <- paste("Rscript makeCNVcalls.R", "--Rdata", ouputRData, "--transProb",  deconParams$transProb,
                      "--out", calls)
         print(cmd); system(cmd)
         print("makeCNVcalls.R finished");
