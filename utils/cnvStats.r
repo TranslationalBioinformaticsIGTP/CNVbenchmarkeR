@@ -320,7 +320,6 @@ SummaryStats <- setRefClass("SummaryStats",
                               },
                               
                               
-                              
                               # Writes summary report to file
                               writeSummary = function(path, datasetName){
                                 cat(paste("  Generating summary file at", path, "\n"))
@@ -335,6 +334,27 @@ SummaryStats <- setRefClass("SummaryStats",
                                   summaryText <- .self$updateSummaryText(summaryText, datasetName, alg)
                                 summaryText <- paste(summaryText, "\n\nSummary file generated at", Sys.time())
                                 write(summaryText, path)
+                              },
+                              
+                              
+                              # Writes csv results file for a desired dataset (gene level)
+                              writeFalseNegativeResults = function(path, datasetName){
+                                cat(paste("  Generating False Negatives summary file at", path, "\n"))
+                                
+                                allFns <- data.frame(sample = character(), gene = character(), cnvType = character(), alg = character(), stringsAsFactors=FALSE)
+                                samples <- datasets[[datasetName]]
+                                for (algorithm in names(globalStats[[datasetName]])){
+                                  for(s in samples) {
+                                    if (s$algorithms[[algorithm]]$nFNgene > 0 ){
+                                      fns <- s$algorithms[[algorithm]]$FNdata
+                                      for (i in 1:nrow(fns)) {
+                                        allFns[nrow(allFns) + 1,] <- list(s$id, fns[i, "gene"], fns[i, "cnvType"], algorithm)
+                                      }
+                                    }
+                                  }
+                                }
+                                
+                                write.table(allFns, path, sep="\t", row.names=FALSE, quote = FALSE)  # write output file
                               },
                               
                               
@@ -633,6 +653,8 @@ SampleStats <- setRefClass("SampleStats",
                                    sas$nTPgene <- sas$nTPgene + 1
                                  } else if ("fn" %in% geneValidatedROIs$eval){  # FN if there was a positive but was not found
                                    sas$nFNgene <- sas$nFNgene + 1
+                                   type <- geneValidatedROIs[geneValidatedROIs$eval == "fn", "cnvType"][1]
+                                   sas$FNdata[sas$nFNgene, ] <- list(g, type)
                                  } else if ("fp" %in% geneValidatedROIs$eval){  # FP if there was no positive but algorithm found it
                                    sas$nFPgene <- sas$nFPgene + 1
                                  } else  # TN
@@ -678,7 +700,8 @@ SampleAlgStats <- setRefClass("SampleAlgStats",
                                 nTPgene = "numeric",
                                 nFPgene = "numeric",
                                 nTNgene = "numeric",
-                                nFNgene = "numeric",                                         
+                                nFNgene = "numeric",
+                                FNdata = "ANY", # data.frame with two columns: gene and cnvType. Contains false negatives for this samples at gene level
                                 
                                 # gene stats including no calls
                                 nTPgene_incNoCall = "numeric",
@@ -708,6 +731,7 @@ SampleAlgStats <- setRefClass("SampleAlgStats",
                                   nFailedROIs <<- nrow(fROIs)
                                   nFailedGenes <<- length(unique(fROIs[, "Gene"]))
                                   failedROIs <<- fROIs
+                                  FNdata <<- data.frame(gene=character(), cnvType=character(),stringsAsFactors=FALSE)
                                 },
                                 
                                 
