@@ -3,7 +3,6 @@
 # Stores tab results file to GenomicRanges file (named as "grPositives.rds")
 saveResultsFileToGR = function(folderPath, resultsFileName, geneColumn = "Gene", sampleColumn = "Sample", 
                                chrColumn = "Chr", startColumn = "Start", endColumn = "End", cnvTypeColumn = "CNV.type") {
-  # suppressPackageStartupMessages(library(mgcv))
   suppressPackageStartupMessages(library(GenomicRanges))
 
   # load results file path
@@ -28,14 +27,13 @@ saveResultsFileToGR = function(folderPath, resultsFileName, geneColumn = "Gene",
   }
   
   # save all results
-  saveRDS(all, file.path(outputFolder, "grPositives.rds"))
+  saveRDS(all, file.path(folderPath, "grPositives.rds"))
 }
 
 
 # Stores results folder to GenomicRanges file (named as "grPositives.rds"). Obly contained tab files with specified pattern name will be readed.
 saveResultsFolderToGR = function(folderPath, pattern, geneColumn = "GENE", sampleColumn = "Sample", chrColumn = "Chr", 
                                  startColumn = "Start", endColumn = "End", cnvTypeColumn = "CNV.type") {
-  suppressPackageStartupMessages(library(mgcv))
   suppressPackageStartupMessages(library(GenomicRanges))
   
   all <- GRanges()
@@ -54,7 +52,7 @@ saveResultsFolderToGR = function(folderPath, pattern, geneColumn = "GENE", sampl
   
   
   # save all results
-  saveRDS(all, file.path(outputFolder, "grPositives.rds"))
+  saveRDS(all, file.path(folderPath, "grPositives.rds"))
 }
 
 # Returns dataframe with columns (SampleID, Genes). Only works form panelcnDataset style format
