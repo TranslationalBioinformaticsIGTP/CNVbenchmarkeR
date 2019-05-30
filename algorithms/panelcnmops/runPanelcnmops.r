@@ -101,8 +101,8 @@ for (name in names(datasets)) {
         # Test samples depending on sample indications compatibility
         allResults <- data.frame()
         allSampleNames <- names(mcols(counts))
-        if (dataset$validated_results_file_format == "panelcn" && dataset$validated_results_file != "" && 
-            (is.null(params$defineControlsByIndication) ||  params$defineControlsByIndication != FALSE ) ) {
+        if (dataset$validated_results_file_format == "panelcn" && dataset$validated_results_file != "" 
+            && params$defineControlsByIndication == TRUE) {
           sample_indications <- readIndicationsForSamples(dataset$validated_results_file)
           indicationsComp <- readCompatibleIndications(dataset$validated_results_file) # get compatible indications for each indication
 
