@@ -61,6 +61,7 @@ algName <- params$algorithm$name
 algFolder <- file.path(getwd(), algName)
 
 # create logs and input folder to be used by jobs
+dir.create(algFolder, showWarnings = FALSE)
 logsFolder <- file.path(algFolder, "logs")
 unlink(logsFolder, recursive = TRUE);
 dir.create(logsFolder, showWarnings = FALSE)
@@ -104,7 +105,7 @@ write(content, file = algParamsFile)
 
 # call algorithm (only precalc phase)
 logPrecalcFile <- file.path(precalcFolder, "precalc.log")
-cmd <- paste("Rscript", params$algorithm$path, algParamsFile, datasetParamsFile, ">", logPrecalcFile, "2>&1")
+cmd <- paste("/soft/general/R-3.4.2/bin/Rscript", params$algorithm$path, algParamsFile, datasetParamsFile, ">", logPrecalcFile, "2>&1")
 print(cmd)
 system(cmd)
 
