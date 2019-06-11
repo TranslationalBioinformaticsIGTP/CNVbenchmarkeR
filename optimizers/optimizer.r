@@ -86,7 +86,7 @@ dir.create(precalcFolder, showWarnings = FALSE)
 
 # create dataset yaml file
 datasetParamsFile <- file.path(precalcFolder, "datasetParams.yaml")  
-datasetContent <- strsplit(readChar("optimizerParams.yaml", file.info("optimizerParams.yaml")$size), "dataset:")[[1]][2]
+datasetContent <- strsplit(readChar(args[1], file.info("optimizerParams.yaml")$size), "dataset:")[[1]][2]
 datasetContent <- gsub("\n  ", "\n", datasetContent)
 write(datasetContent, file = datasetParamsFile)
 
