@@ -55,7 +55,7 @@ An SGE cluster system has to be available.
 
 ### How to use
 
-1. Configure optimizers/optimizerParams.yaml by defining optimizer params, dataset and algorithm to be optimized.
+1. Configure optimizers/optimizerParams.yaml by defining optimizer params, dataset and algorithm to be optimized. Note: it is recommended to optimize over a random subset (training subset) of the original subset. Then, performance can be compared on the validation subset.
 2. Execute optimizer:
 ```
 cd optimizers
