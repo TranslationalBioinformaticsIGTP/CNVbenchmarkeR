@@ -22,26 +22,34 @@ SummaryStats <- setRefClass("SummaryStats",
                                 # load data depending on format
                                 cols <- colnames(read.csv(path, sep="\t", header=TRUE, stringsAsFactors = FALSE))
                                 if (all(cols[1:3] == c("SampleID", "Indication", "Truth"))) {  # panelcnDataset format
-                                  data <- read.csv(path, sep="\t", header=TRUE, stringsAsFactors = FALSE, nrows = 176)
+                                  data <- read.csv(path, sep="\t", header=TRUE, stringsAsFactors = FALSE)
+                                  
+                                  # Look for the row where cascades definition starts
+                                  idx <- which(data$SampleID == "" & data$Indication == "Genes")
+                                  if (length(idx) == 0){
+                                    stop("Error: row where cascades definition starts was not found. Please, check example at https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR/blob/master/examples/validatedResultsFileExample_Panelcn.csv")
+                                  }
+                                  
+                                  data <- read.csv(path, sep="\t", header=TRUE, stringsAsFactors = FALSE, nrows = idx - 1)
                                   data <- subset(data, SampleID != "")[, 1:5]
-                                  cascades <- auxReadCascades(path)
+                                  cascades <- auxReadCascades(path, idx)
                                   data <- transformToICRformat(data, cascades)
                                 } else   # ICR96 format
                                   data <- read.csv(path, sep="\t", header=TRUE, stringsAsFactors = FALSE)
-
+                                
                                 # add dataset
                                 datasets[[datasetName]] <<- getSamplesWithResults(data, bedFile)
                                 globalStats[[datasetName]] <<- list()
                               },
-
-
+                              
+                              
                               # Returns cascades from panecln dataset format file
-                              auxReadCascades = function(path){
-                                cascades <- read.csv(path, sep="\t", stringsAsFactors = FALSE, header = TRUE, skip = 191)
+                              auxReadCascades = function(path, idx){
+                                cascades <- read.csv(path, sep="\t", stringsAsFactors = FALSE, header = TRUE, skip = idx)
                                 cascades <- cascades[!cascades[,1] %in% c(" ", "", NA),]
                                 cascades <- cascades[cascades[,2] != "" & cascades[,2] != " ",]
                                 row.names(cascades) <- cascades[,1]
-
+                                
                                 return(cascades)
                               },
 
