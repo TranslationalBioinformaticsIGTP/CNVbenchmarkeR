@@ -94,13 +94,13 @@ datasets <- yaml.load_file(datasetsParamsFile)
 print(paste("Params for this execution:", list(params)))
 
 
-# go over datasets and run convading for those which are active
+# go over datasets and run ExomeDepth for those which are active
 for (name in names(datasets)) {
 
   dataset <- datasets[[name]]
   
   if (dataset$include){
-    print(paste("Starting convading for", name, "dataset", sep=" "))
+    print(paste("Starting ExomeDepth for", name, "dataset", sep=" "))
     
     
     # extract fields
