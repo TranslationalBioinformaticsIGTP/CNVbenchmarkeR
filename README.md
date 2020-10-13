@@ -22,10 +22,10 @@ git clone https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR
 
 2. **Configure algorithms.yaml** to set which algortithms will be benchmarked. In case of executing DECoN, modify algorithms/decon/deconParams.yaml by setting deconFolder to your DECoN folder installation. In case of executing CoNVaDING, modify algorithms/convading/convadingParams.yaml by setting convadingFolder param.
 
-**Configure datasets.yaml** to define against which datasets the algorithms will be executed. Within this file, it is important to provide files with the expected format (special attention to `validated_results_file` and `bed_file`). To do so, please check the [examples](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR/tree/master/examples) folder.
+3. **Configure datasets.yaml** to define against which datasets the algorithms will be executed. Within this file, it is important to provide files with the expected format (special attention to `validated_results_file` and `bed_file`). To do so, please check the [examples](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR/tree/master/examples) folder.
 
 
-3. Launch CNVbenchmarker
+4. Launch CNVbenchmarker
 ```
 cd CNVbenchmarkerR
 ./runBenchmark.sh
