@@ -43,6 +43,13 @@ Stats are calculated per ROI, per gene and at whole strategy level (gene level i
 Logs files will be generated at logs folder. Output for each algorithm and dataset will be generated at output folder.
 
 
+### Troubleshooting  ###
+
+Two important checks to ensure that metrics are computed correctly:
+
+- The **sample names in the `validated_results_file` should match the file names of your bam files** (excluding the .bam extension). For example, if the `validated_results_file` contains sample names like mySample2312, your bam files should have file names like mySample2312.bam .
+- Provide and use chromosomes names with the same format, that is, do not use "chr5" and "5" in you bed and `validated_results_file` files, for example.
+
 
 ## Extra feature: optimizer ##
 
